@@ -1,0 +1,108 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    background-color: #f8f9fa;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+button {
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+button.active {
+    background-color: #e74c3c;
+}
+.section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.chart-container {
+    margin: 20px 0;
+}
+.description {
+    font-style: italic;
+    color: #333;
+}
+.tabela-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin: 20px 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ececec;
+    text-align: left;
+}
+th {
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+tr:hover {
+    background-color: #f8f9fa;
+}
+.status {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+.erro {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
+.erro ul {
+    margin: 10px 0 0 20px;
+}
+@media (max-width: 768px) {
+    .botoes {
+        grid-template-columns: 1fr;
+    }
+}

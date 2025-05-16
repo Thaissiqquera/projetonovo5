@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Data Marketing Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Dashboard de Marketing</h1>
+    <div class="botoes">
+      <button data-section="clustersSection">🔍 Clusters</button>
+      <button data-section="campanhasSection">📈 Campanhas</button>
+      <button data-section="analisesSection">📊 Análises</button>
+      <button data-section="satisfacaoSection">⭐ Satisfação</button>
+    </div>
+
+    <div id="clustersSection" class="section">
+      <div class="filter-container">
+        <label for="clusterFilter">Cluster:</label>
+        <select id="clusterFilter"><option value="all">Todos</option></select>
+      </div>
+      <div class="chart-container"><canvas id="clusterChart"></canvas></div>
+      <p class="description">Scatter plot dos clusters (PCA).</p>
+      <div class="chart-container"><canvas id="clusterDiagChart"></canvas></div>
+      <p class="description">Médias por cluster: frequência, gasto e dias desde última compra.</p>
+    </div>
+
+    <div id="campanhasSection" class="section" style="display:none">
+      <div class="filter-container">
+        <label for="campanhaFilter">Campanha:</label>
+        <select id="campanhaFilter"><option value="all">Todas</option></select>
+      </div>
+      <div class="chart-container"><canvas id="campanhaChart"></canvas></div>
+      <p class="description">Gasto médio/cliente e ROI das campanhas.</p>
+      <div id="suggestions" class="chart-container">
+        <h2>Sugestões</h2>
+        <ul id="suggestionList"></ul>
+      </div>
+    </div>
+
+    <div id="analisesSection" class="section" style="display:none">
+      <div class="chart-container"><canvas id="regressionChart"></canvas></div>
+      <p class="description">Coeficientes da regressão linear.</p>
+      <div class="chart-container"><canvas id="clvChart"></canvas></div>
+      <p class="description">Distribuição de segmentos CLV.</p>
+    </div>
+
+    <div id="satisfacaoSection" class="section" style="display:none">
+      <div class="tabela-container" id="tableContainer">
+        <div class="status">Carregando tabela de satisfação...</div>
+      </div>
+      <p class="description">Tabela com satisfação média por campanha (1 a 5).</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
